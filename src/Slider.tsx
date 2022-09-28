@@ -75,10 +75,12 @@ const Slider = (props: Props) => {
         </View>
         <RNSlider
           //style={[styles.progressSlider]}
+          animateTransitions
           onValueChange={dragging}
           onSlidingComplete={seekVideo}
           maximumValue={Math.floor(duration)}
           value={Math.floor(progress)}
+          thumbTintColor={"white"}
           trackStyle={[styles.track, customTrackStyle] as ViewStyle}
           thumbStyle={[
             styles.thumb,
