@@ -44,7 +44,7 @@ const Slider = (props: Props) => {
   const customTrackStyle = customSliderStyle?.trackStyle || {};
   const customThumbStyle = customSliderStyle?.thumbStyle || {};
 
-  const dragging = (value: number) => {
+  const dragging = (value: any) => {
     const { onSeeking, playerState } = props;
     onSeeking(value);
 
@@ -55,7 +55,7 @@ const Slider = (props: Props) => {
     onPause();
   };
 
-  const seekVideo = (value: number) => {
+  const seekVideo = (value: any) => {
     props.onSeek(value);
     onPause();
   };
@@ -74,17 +74,17 @@ const Slider = (props: Props) => {
           </Text>
         </View>
         <RNSlider
-          style={[styles.progressSlider]}
+          //style={[styles.progressSlider]}
           onValueChange={dragging}
           onSlidingComplete={seekVideo}
           maximumValue={Math.floor(duration)}
           value={Math.floor(progress)}
-          trackStyle={[styles.track, customTrackStyle]}
+          trackStyle={[styles.track, customTrackStyle] as ViewStyle}
           thumbStyle={[
             styles.thumb,
             customThumbStyle,
             { borderColor: mainColor },
-          ]}
+          ] as ViewStyle}
           minimumTrackTintColor={mainColor}
           trackClickable={trackClickable}
         />
