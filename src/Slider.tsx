@@ -21,6 +21,7 @@ type Props = Pick<
   | "playerState"
   | "onSeek"
   | "onSeeking"
+  | "trackClickable"
 > & {
   onPause: () => void;
   customSliderStyle?: CustomSliderStyle;
@@ -36,6 +37,7 @@ const Slider = (props: Props) => {
     onFullScreen,
     onPause,
     progress,
+    trackClickable
   } = props;
 
   const containerStyle = customSliderStyle?.containerStyle || {};
@@ -84,6 +86,7 @@ const Slider = (props: Props) => {
             { borderColor: mainColor },
           ]}
           minimumTrackTintColor={mainColor}
+          trackClickable={trackClickable}
         />
       </View>
       {Boolean(onFullScreen) && (
