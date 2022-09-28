@@ -62,10 +62,17 @@ export default StyleSheet.create({
     width: 25,
   },
   thumb: {
-    backgroundColor: white,
-    borderRadius: 50,
-    borderWidth: 3,
+    backgroundColor: '#ffffff',
+    borderRadius: 10,
+    borderWidth: 5,
     height: 20,
+    shadowColor: "black",
+    shadowOffset: {
+        width: 0,
+        height: 2,
+    },
+    shadowOpacity: 0.35,
+    shadowRadius: 2,
     width: 20,
   },
   timeRow: {
